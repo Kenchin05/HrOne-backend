@@ -1,5 +1,6 @@
 import motor.motor_asyncio
 from bson.objectid import ObjectId
+from dotenv import load_dotenv
 
 
 load_dotenv()
@@ -8,7 +9,7 @@ load_dotenv()
 MONGO_DETAILS = os.getenv("MONGO_DETAILS")
 
 if not MONGO_DETAILS:
-    raise ValueError("MONGO_DETAILS environment variable not set!")
+    raise ValueError("MONGO_DETAILS environment variable not set!") 
 
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGO_DETAILS)
 db = client.hron_ecommerce
